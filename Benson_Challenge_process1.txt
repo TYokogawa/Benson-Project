@@ -1,0 +1,38 @@
+Benson project work 1
+
+We use diff  entry data.   > exit data is somehow lower number in general
+Morning  -9:00 > grep datetime[HH:MM]  HH = 7,8,9 
+Evening  - 17:00
+
+Total entry number (sum) per station.
+
+>>  Data from MTA starts 00:00, 01:00, 02:00, 03:00     four pattern depend on station
+
+>>  Trying to slice data of rush hours for commuter (avoiding visitor, choose commute station)
+
+slice data only including hour is  7,8,9am  >  start with 8am data
+
+Morning
+If start data with 00:00  then grab 3rd row >  will be 08:00
+If start data with 01:00 or 02:00 or 03:00   then grab 2rd row >  will be 05:00, 06:00, 07:00
+
+Evening
+If start data with 00:00 or 01:00 or 02:00  then grab 5rd row >  will be 16:00, 17:00, 18:00
+If start data with  03:00   then grab 4rd row >  will be 15:00
+
+
+Added for total of all exit in a station at peak hours morning and evening.
+Result is total exit number in a station in peak hours.
+
+Sort the highest rush hour traffic stations. 
+
+>>  (extra)  Compare time of the day,  2 peak(5-8-12am, 15-18-22:00 ) vs 2 non-peak
+
+
+Non-peak Morning
+If start data with 00:00  then grab 4rd row >  will be 12:00
+If start data with 01:00 or 02:00 or 03:00   then grab 3rd row >  will be 09:00, 10:00, 11:00
+
+Non-peak Evening
+If start data with 00:00 or 01:00 or 02:00  then grab 6rd row >  will be 20:00, 21:00, 22:00
+If start data with  03:00   then grab  5rd row >  will be 19:00
